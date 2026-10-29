@@ -39,8 +39,8 @@ const en = {
   sceneMicro: (count: number) => `small box (${count} balls)`,
 
   // Demo 劇本
-  scriptsTitle: 'DEMO SCRIPTS',
-  scriptNames: { micro: 'Script 1 · Verlet list concept', compare: 'Script 2 · Comparing the methods', octree: 'Script 3 · Octree structure' } as Record<ScriptId, string>,
+  scriptsTitle: 'DEMO MODES',
+  scriptNames: { micro: 'Verlet list concept', compare: 'Comparing the methods', octree: 'Octree structure' } as Record<ScriptId, string>,
   scriptHints: {
     micro: 'A few big balls in slow motion: candidate pairs, a real collision and bounce, and when the list is rebuilt',
     compare: 'Same particles, two views: Uniform Grid on top, Octree below. Compare rebuilds, candidate pairs and detection time while adjusting K',
@@ -124,7 +124,7 @@ const en = {
 
   // 自由調整（進階）
   sectionFree: 'MANUAL SETTINGS (ADVANCED)',
-  sectionFreeHint: 'Change parameters by hand. After a change the scene restarts and is no longer a demo script.',
+  sectionFreeHint: 'Change parameters by hand. After a change the scene restarts and is no longer one of the demo modes.',
   sceneLabel: 'Scene',
   scenes: { cloud: 'Particle cloud', explosion: 'Fireworks', micro: 'Small box' } as Record<Scene, string>,
   particleCount: 'Number of particles',
@@ -232,8 +232,8 @@ const zh: Strings = {
   sceneExplosion: (shells) => `煙火爆炸（${shells} 發）`,
   sceneMicro: (count) => `小空間（${count} 顆球）`,
 
-  scriptsTitle: 'Demo 劇本',
-  scriptNames: { micro: '劇本一：Verlet list 概念', compare: '劇本二：方法比較', octree: '劇本三：八元樹結構' },
+  scriptsTitle: '展示模式',
+  scriptNames: { micro: 'Verlet list 概念', compare: '方法比較', octree: '八元樹結構' },
   scriptHints: {
     micro: '少量大球、慢動作：看候選配對、真的相撞並反彈，以及什麼時候重建',
     compare: '同一批粒子、上下兩個畫面：上均勻網格、下八元樹；調整 K，比較重建次數、候選配對數量與偵測時間',
@@ -313,7 +313,7 @@ const zh: Strings = {
   depthNoteSelected: '實線是葉節點（裝著粒子）；虛線是已再往下切開的格子，它的範圍由更深的層級填滿。沒有粒子的空格子不會畫出來。粒子屬於哪一層，以最近一次重建的結果為準。',
 
   sectionFree: '自由調整（進階）',
-  sectionFreeHint: '手動改參數；改了之後會從頭開始，也就不再是劇本的設定。',
+  sectionFreeHint: '手動改參數；改了之後會從頭開始，也就不再是上面展示模式的設定。',
   sceneLabel: '場景',
   scenes: { cloud: '粒子雲', explosion: '煙火爆炸', micro: '小空間' },
   particleCount: '粒子數量',
