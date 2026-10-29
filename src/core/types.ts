@@ -61,10 +61,13 @@ export interface RebuildEvent {
 export interface StepMetrics {
   step: number;
   algorithm: string;
-  elapsedMs: number;      // 這一步總共花了幾毫秒
+  elapsedMs: number;      // 這一步總共花了幾毫秒（含碰撞回應與積分）
+  checkMs: number;        // 位移失效判定（每顆粒子和自己的快照比距離）花的時間；沒開 Verlet 緩衝就是 0
   broadPhaseMs: number;   // 其中 broad-phase（找候選配對）花的時間；沒重建就是 0
   narrowPhaseMs: number;  // narrow-phase（逐一確認候選配對是否真的碰撞）花的時間
-  distanceChecks: number;
+  detectionMs: number;    // 碰撞偵測時間 = 判定 + broad-phase + narrow-phase
+  broadPhaseChecks: number; // broad-phase 做了幾次「兩顆粒子之間」的距離比對；沒重建就是 0
+  distanceChecks: number; // 這一步總共做了幾次兩兩距離比對 = broad-phase + narrow-phase（每組候選配對一次）
   candidatePairs: number;
   collisions: number;     // 真的碰撞的配對數
   rebuilt: boolean;       // 這一步有沒有重建

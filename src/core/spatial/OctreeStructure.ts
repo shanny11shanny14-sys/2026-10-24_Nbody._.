@@ -189,6 +189,8 @@ export class OctreeStructure implements SpatialStructure {
   }
 
   // 把一個太擠的葉節點切成 8 個子方塊，再把原本的粒子重新插進去（它們會各自落到某個子方塊）
+  // depth 是 node 自己的層級。重新插入時從 node 開始，insert() 往子方塊走時會自己把層級 +1，
+  // 所以這裡傳 depth（與 C++ Octree::split 相同）；傳 depth + 1 會讓子方塊被當成深了一層而提早停止切割。
   private split(node: Node, depth: number): void {
     const existing = [...node.indices];
     node.indices = [];
@@ -205,7 +207,7 @@ export class OctreeStructure implements SpatialStructure {
     }
 
     for (const idx of existing) {
-      this.insert(node, idx, depth + 1);
+      this.insert(node, idx, depth);
     }
   }
 

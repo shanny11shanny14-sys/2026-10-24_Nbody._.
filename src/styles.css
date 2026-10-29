@@ -26,3 +26,78 @@ input[type=range]:disabled{cursor:default}
 .event-list{max-height:230px;overflow:auto;padding-right:4px}
 .event-log{min-height:0}
 .viewport-label{right:68px}.sidebar-toggle{position:absolute;top:20px;right:20px;z-index:5;display:flex;align-items:center;justify-content:center;width:34px;height:34px;background:#101b27cc;border:1px solid #35535a;color:#d8e0dc;cursor:pointer}.sidebar-toggle:hover{border-color:#5dcaa5;color:#5dcaa5}.app-shell.sidebar-collapsed{grid-template-columns:minmax(0,1fr) 0}.app-shell.sidebar-collapsed .panel{display:none}
+.segmented.three{grid-template-columns:repeat(3,1fr)}
+.script-bar{padding:22px 0 4px}.script-bar .block-heading{margin-bottom:12px}.script-buttons{display:grid;gap:8px}.script-buttons button{display:flex;flex-direction:column;align-items:flex-start;gap:4px;width:100%;background:#17262f;border:1px solid #35535a;color:#edeae2;padding:11px 13px;text-align:left;cursor:pointer;font:600 14px 'DM Sans',sans-serif}.script-buttons button small{font:400 12px/1.45 'DM Sans',sans-serif;color:#9daeb0;letter-spacing:0}.script-buttons button:hover{border-color:#5dcaa5}.script-buttons button.active{border-color:#5dcaa5;background:#1d3a3a;box-shadow:inset 3px 0 0 #5dcaa5}
+.check-row{display:flex;justify-content:flex-start;align-items:center;gap:8px;margin:10px 0 0;font:11px 'IBM Plex Mono',monospace;letter-spacing:.3px;color:#9daeb0;cursor:pointer}.check-row input{accent-color:#5dcaa5;margin:0}
+.start-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:3}.start-overlay button{pointer-events:auto;display:flex;flex-direction:column;align-items:center;gap:10px;max-width:340px;background:rgba(13,20,32,.86);border:1px solid #5dcaa5;color:#edeae2;padding:22px 30px;cursor:pointer;font:600 20px 'DM Sans',sans-serif;box-shadow:0 0 44px rgba(93,202,165,.28)}.start-overlay button svg{color:#5dcaa5}.start-overlay small{font:400 13px/1.5 'DM Sans',sans-serif;color:#9daeb0;text-align:center}.start-overlay button:hover{background:rgba(29,58,58,.92)}
+.pause-note{position:absolute;top:112px;left:50%;transform:translateX(-50%);padding:8px 14px;background:rgba(16,27,39,.9);border:1px solid #d85a30;color:#f3c4b3;font:500 13px 'DM Sans',sans-serif;pointer-events:none;z-index:3;white-space:nowrap}
+.rebuild-banner{position:absolute;top:64px;left:50%;transform:translateX(-50%);padding:9px 18px;background:rgba(16,27,39,.9);border:1px solid #b98cff;border-left:4px solid #b98cff;color:#edeae2;font:600 15px 'DM Sans',sans-serif;text-align:center;pointer-events:none;z-index:2;animation:banner 1.8s ease-out forwards;max-width:calc(100% - 40px)}.rebuild-banner small{display:block;margin-top:3px;font:400 11px 'IBM Plex Mono',monospace;color:#cdb6ff}
+@keyframes banner{0%{opacity:0;transform:translate(-50%,-8px)}10%{opacity:1;transform:translate(-50%,0)}70%{opacity:1}100%{opacity:0;transform:translate(-50%,0)}}
+.pop{display:inline-block;animation:pop .7s ease-out}@keyframes pop{0%{transform:scale(1.7);color:#b98cff}100%{transform:scale(1)}}
+.viewport-legend i.ring{background:none;border:2px solid;width:10px;height:10px}.viewport-legend .rebuild-note{flex-basis:100%;color:#b9a3e8}
+/* ---------- 模擬畫面：像電視螢幕的外框、上方標題列、下方圖例 ---------- */
+.viewport{display:flex;padding:14px;background:#090e16}
+.screen{flex:1;display:flex;flex-direction:column;min-width:0;border:1px solid #31505f;border-radius:12px;background:#060a12;box-shadow:0 0 0 5px #121d29,0 0 0 6px #22384a,0 18px 44px rgba(0,0,0,.5);overflow:hidden}
+.screen-titlebar{display:flex;align-items:center;gap:16px;padding:9px 10px 9px 16px;background:#0f1a26;border-bottom:1px solid #22384a}
+.screen-title{display:flex;align-items:center;flex:none;font:600 17px 'DM Sans',sans-serif;color:#edeae2;white-space:nowrap}
+.screen-status{display:flex;flex-wrap:wrap;gap:3px 18px;flex:1;min-width:0;font:13px 'DM Sans',sans-serif;color:#8fa0a3}
+.screen-status b{color:#edeae2;font-weight:600;margin-left:3px}
+.screen-titlebar .sidebar-toggle{position:static;flex:none}
+.screen-body{position:relative;flex:1;min-height:0}
+.screen-legend{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;padding:9px 16px 10px;background:#0f1a26;border-top:1px solid #22384a;font:12px 'DM Sans',sans-serif;color:#b5c2c4}
+.screen-legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:-1px}.screen-legend i.ring{background:none;border:2px solid;width:11px;height:11px;vertical-align:-2px}
+.screen-legend .rebuild-note{flex-basis:100%;color:#c9b3ff}.screen-legend .hint{flex-basis:100%;color:#657a7d;font-size:11px}
+.screen-body .rebuild-banner{top:14px}.screen-body .pause-note{top:64px}
+/* ---------- 側邊欄：字放大、白話標籤 ---------- */
+.block-heading{font-size:12px;letter-spacing:1px}
+label{font-size:12px;color:#b5c2c4;align-items:flex-end;gap:10px}label span small{display:block;margin-top:3px;font:11px/1.45 'DM Sans',sans-serif;color:#71858a;letter-spacing:0}
+.toggle-row{gap:12px;font:13px 'DM Sans',sans-serif}.toggle-row small{font:11px/1.45 'DM Sans',sans-serif;color:#71858a;letter-spacing:0}.toggle-row .switch{flex:none}
+.block-hint{font:12px/1.5 'DM Sans',sans-serif;letter-spacing:0}.block-note{font:12px/1.55 'DM Sans',sans-serif}
+.action-row button{font-size:12px}.speed-row{font-size:12px}.speed-row small{font-size:10px}
+.segmented button{font-size:12px}.segmented button small{display:block;margin-top:3px;font-size:9px;color:#657a7d;letter-spacing:.5px}.segmented button.active small{color:#7fbfa9}
+.mini-segmented{display:flex;flex:none;border:1px solid #35535a}.mini-segmented button{background:transparent;border:0;border-left:1px solid #35535a;color:#8fa0a3;padding:6px 10px;font:12px 'DM Sans',sans-serif;cursor:pointer}.mini-segmented button:first-child{border-left:0}.mini-segmented button.active{background:#24434a;color:#5dcaa5}
+.inspector-grid dt{font-size:11px}.inspector-grid dd{font-size:12px}.inspector-grid div{grid-template-columns:132px 1fr}
+.event-log .event-item{font-size:11px}.trigger-hint,.inspector .quiet,.event-log .quiet{font:12px/1.55 'DM Sans',sans-serif}
+.depth-list i.plain{background:#93a7b0}
+.export{margin-top:22px}
+/* ---------- 數據面板：重建次數最顯眼，下面兩組各用一種顏色框起來 ---------- */
+.stats-panel{display:grid;gap:12px}
+.stat-hero{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 12px;padding:12px 14px;border:1px solid #5d4a86;background:#17182e}
+.stat-hero-label{font:600 15px 'DM Sans',sans-serif;color:#cdb6ff}
+.stat-hero strong{font:600 38px 'IBM Plex Mono',monospace;line-height:1;color:#edeae2}
+.stat-hero p{flex-basis:100%;margin:2px 0 0;font:12px/1.5 'DM Sans',sans-serif;color:#9e93bf}
+.stat-group{padding:11px 14px 10px;border:1px solid}.stat-group.efficiency{border-color:#33607d;background:#0e1f2d}.stat-group.pairs{border-color:#7d6430;background:#1d1910}
+.stat-group-title{margin-bottom:4px;font:600 13px 'DM Sans',sans-serif;letter-spacing:.5px}.efficiency .stat-group-title{color:#8fd0ff}.pairs .stat-group-title{color:#f2c46d}
+.stat-row{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:2px 10px;padding:7px 0;border-top:1px solid rgba(255,255,255,.07)}.stat-group-title+.stat-row{border-top:0}
+.stat-row span{font:500 13px 'DM Sans',sans-serif;color:#d8e0dc}.stat-row b{font:500 21px 'IBM Plex Mono',monospace;color:#edeae2}.stat-row b i{font-size:11px;font-style:normal;color:#8fa0a3}
+.stat-row small{grid-column:1/-1;font:11px 'DM Sans',sans-serif;letter-spacing:0;color:#71858a}
+.detect-bars{display:flex;align-items:flex-end;gap:2px;height:34px;margin-top:6px;border-bottom:1px solid #33607d}.detect-bars span{flex:1;min-width:2px;background:#3f7699}.detect-bars span.rebuilt{background:#b98cff}
+.stat-note{margin:6px 0 0;font:11px/1.45 'DM Sans',sans-serif;color:#71858a}
+/* ---------- 手機版：畫面在上、面板在下，標題列與圖例可換行 ---------- */
+@media(max-width:800px){
+.viewport{height:auto;min-height:0;padding:8px}
+.screen-body{flex:none;height:56vh;min-height:300px}
+.screen-titlebar{flex-wrap:wrap;gap:4px 12px;padding:8px 10px}.screen-title{font-size:15px}.screen-status{flex-basis:100%;font-size:12px;gap:2px 12px}
+.screen-titlebar .sidebar-toggle{display:none}
+.screen-legend{padding:8px 10px;font-size:11px;gap:4px 12px}
+.panel{padding:18px 16px}.playbar{margin:16px -16px 0;padding:12px 16px}.speed-row{flex-wrap:wrap}
+.start-overlay button{max-width:270px;padding:16px 18px;font-size:17px}
+.rebuild-banner{width:calc(100% - 24px);white-space:normal;font-size:13px}.pause-note{white-space:normal;width:calc(100% - 24px);text-align:center}
+h1{font-size:26px}
+}
+/* ---------- 劇本二：上下兩個畫面、畫面上的控制列、並排數據 ---------- */
+.sim-screen{position:relative;width:100%;height:100%}
+.screen-body.dual{display:flex;flex-direction:column}.screen-body.dual .sim-screen{flex:1;height:auto;min-height:0}.screen-body.dual .sim-screen+.sim-screen{border-top:2px solid #31505f}
+.sim-screen .rebuild-banner{top:12px}.screen-body.dual .rebuild-banner{top:auto;bottom:10px;padding:6px 14px;font-size:13px}
+.view-tag{position:absolute;top:10px;left:12px;display:flex;flex-direction:column;gap:2px;max-width:calc(100% - 24px);padding:6px 10px;background:rgba(15,26,38,.88);border:1px solid #31505f;font:12px 'DM Sans',sans-serif;color:#b5c2c4;pointer-events:none}.view-tag b{font-size:14px;color:#edeae2}
+.screen-controls{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;padding:10px 16px;background:#13202e;border-top:1px solid #22384a}
+.k-control{display:flex;align-items:center;gap:12px;flex:1;min-width:240px;margin:0;font:13px 'DM Sans',sans-serif;color:#d8e0dc;cursor:default}.k-control span{white-space:nowrap}.k-control b{margin-left:6px;font:600 18px 'IBM Plex Mono',monospace;color:#cdb6ff}.k-control input{flex:1}
+.inline-toggle{display:flex;align-items:center;gap:8px;font:13px 'DM Sans',sans-serif;color:#d8e0dc}
+.compare-stats table{width:100%;border-collapse:collapse}.compare-stats thead th{padding:6px 4px;border-bottom:1px solid #2a3f4a;font:600 12px 'DM Sans',sans-serif;color:#9daeb0;text-align:right}
+.compare-stats tbody th{padding:8px 4px;border-bottom:1px solid rgba(255,255,255,.06);font:500 12px/1.4 'DM Sans',sans-serif;color:#d8e0dc;text-align:left}.compare-stats td{padding:8px 4px;border-bottom:1px solid rgba(255,255,255,.06);font:500 15px 'IBM Plex Mono',monospace;color:#edeae2;text-align:right;white-space:nowrap}.compare-stats td.better{color:#5dcaa5}
+@media(max-width:800px){.screen-controls{padding:8px 10px;gap:8px 14px}.k-control{min-width:100%}.view-tag{top:6px;left:6px;font-size:11px}.view-tag b{font-size:12px}}
+/* 畫布本身的像素高度不能撐高版面（否則兩個畫面時整頁會超出視窗）：畫布容器改成絕對定位，填滿所在的畫面 */
+.app-shell{grid-template-rows:minmax(0,1fr)}.viewport{min-height:0;overflow:hidden}
+.sim-screen{overflow:hidden}.sim-screen>div:first-child{position:absolute!important;inset:0}
+@media(max-width:800px){.app-shell{grid-template-rows:none}.viewport{overflow:visible}}
+.action-row button:disabled{opacity:.35;cursor:default}.action-row button:disabled:hover{border-color:#35535a;color:#d8e0dc}
